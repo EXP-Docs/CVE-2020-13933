@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config hint="常用配置（覆写全量配置文件的对应项）">
+  
+  <datasources caption="数据源列表" hint="">
+    <datasource id="TEST-DS-SQL" caption="示例配置" hint="">
+      <driver default="mysql" caption="数据源驱动类型" hint="常用枚举:
+      	oracle/mysql/sqlite/redis">mysql</driver>
+      <ip caption="数据库IP">127.0.0.1</ip>
+      <port caption="数据库端口">3306</port>
+      <name caption="库名/实例名">test</name>
+      <username caption="登录账户">root</username>
+      <password caption="登录密码">root</password>
+      <charset default="UTF-8" caption="数据库字符集">UTF-8</charset>
+      <maximum-active-time default="60000" caption="连接超时时间(ms)">60000</maximum-active-time>
+    </datasource>
+    
+    <datasource id="TEST-DS-NOSQL" caption="示例配置" hint="">
+      <driver default="mysql" caption="数据源驱动类型" hint="常用枚举:
+      	oracle/mysql/sqlite/redis">redis</driver>
+      <ip caption="数据库IP">127.0.0.1</ip>
+      <port caption="数据库端口">6379</port>
+      <password caption="登录密码"></password>
+      <maximum-active-time default="10000" caption="连接超时时间(ms)">10000</maximum-active-time>
+    </datasource>
+  </datasources>
+  
+  
+  
+  <sockets caption="Socket列表">
+    <socket id="TEST-SOCK" caption="示例配置" hint="">
+      <ip default="127.0.0.1" caption="服务IP">127.0.0.1</ip>
+      <port default="9998" caption="服务端口">9998</port>
+      <username caption="登陆账号"></username>
+      <password caption="登陆密码"></password>
+      <charset default="UTF-8" caption="收发数据编码">UTF-8</charset>
+      <bufferSize default="1" caption="收发数据缓冲区大小(MB)">1</bufferSize>
+      <delimiter default="\0" caption="收发数据的消息分隔符">\0</delimiter>
+      <overtime default="60000" caption="交互超时时间(ms)">60000</overtime>
+    </socket>
+  </sockets>
+  
+  
+  
+  <enumExample caption="枚举节点示例">
+  
+    <enumTag id="EX-A" type="enum" caption="枚举节点示例A" 
+    	   hint="子节点同名, 父节点需声明类型为enum">
+      <foo>xxx</foo>
+      <foo>yyy</foo>
+      <foo>zzz</foo>
+    </enumTag>
+  
+    <enumTag id="EX-B" caption="枚举节点示例B" 
+            hint="子节点不同名, 父节点可不声明enum类型">
+      <foo1>aaa</foo1>
+      <foo2>bbb</foo2>
+      <foo3>ccc</foo3>
+    </enumTag>
+ 
+    <enumTag id="EX-C" caption="枚举节点示例C" 
+    	    hint="子节点同名, 但声明了不同id, 父节点可不声明enum类型">
+      <foo id="a">123</foo>
+      <foo id="b">456</foo>
+      <foo id="c">789</foo>
+    </enumTag>
+    
+  </enumExample>
+   
+</config>
